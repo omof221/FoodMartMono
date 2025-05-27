@@ -1,0 +1,46 @@
+﻿@model FoodMartMono.Dtos.DiscountsDto.CreateDiscountDto 
+@{
+    ViewData["Title"] = "CreateDiscount";
+    Layout = "~/Views/_layoutmain.cshtml";
+}
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<h2>İndirimli Ürün Ekleme Sayfası</h2>
+<div class="container">
+    <br />        <br />
+    <h3 class="alert alert-primary">Yeni Ürün  Ekleme Sayfası</h3>
+    <form method="post">
+        <label>İndirim Yapılan Ürün Başlığı </label>
+        <input type="text" asp-for="DiscountTitle" class="form-control" />
+        <br />
+        <label>İndirim Yapılan Ürün Alt Başlığı </label>
+        <input type="text" asp-for="DiscountSubtitle" class="form-control" />
+        <br />
+        <label>İndirim Yapılan Ürün Açıklaması </label>
+        <input type="text" asp-for="DiscountDescription" class="form-control" />
+        <br />
+        <label>Ürün Fotoğrafı </label>
+        <input type="text" asp-for="ImmageUrl" class="form-control" />
+        <br />
+      
+        <br />
+        <button class="btn btn-info">Ürünü  Ekle</button>
+
+
+
+
+
+
+
+    </form>
+
+
+
+
+
+
+
+
+</div>
+

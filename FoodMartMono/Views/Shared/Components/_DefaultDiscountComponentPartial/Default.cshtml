@@ -1,0 +1,52 @@
+﻿@model FoodMartMono.Models.MailRequest
+@if (TempData["Succes"] != null)
+{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: '@Html.Raw(TempData["Success"])',
+
+            showConfirmButton: true
+
+        });
+    </script>
+}
+<section class="py-5">
+    <div class="container-fluid">
+
+        <div class="bg-secondary py-5 my-5 rounded-5" style="background: url('images/bg-leaves-img-pattern.png') no-repeat;">
+            <div class="container my-5">
+                <div class="row">
+                    <div class="col-md-6 p-5">
+                        <div class="section-header">
+                            <h2 class="section-title display-4">Şimdi Alışverişe Başka <span class="text-primary">%90</span> İndirimi Yakala</h2>
+                        </div>
+                        <p>Mağzamız bültenine yandaki kısımdan kayıt olup ilk alışverişinizde %90 a varan indirim kazanın.</p>
+                    </div>
+                    <div class="col-md-6 p-5">
+                        <form asp-action="Index" asp-controller="Mail" method="post">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">İsim</label>
+                                <input type="text"
+                                       class="form-control form-control-lg" name="Name" id="Name" placeholder="İsminiz">
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Email</label>
+                                <input type="email" class="form-control form-control-lg" name="ReciverMail" id="email" placeholder="E-posta adresiniz">
+                            </div>
+                           
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-dark btn-lg">Abone Ol</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>

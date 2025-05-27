@@ -1,0 +1,51 @@
+﻿@using FoodMartMono.Dtos.DiscountsDto
+@model List<ResultDiscountDto>    
+
+
+@{
+    var first = Model.Take(1).ToList();
+    var second = Model.Skip(1).Take(1).ToList();
+}
+<section class="py-5">
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var item in first)
+            {
+                <div class="col-md-6">                       @*    normalde burada resim url si girilecek ama tasarıma uygun resim bulunamadı *@
+                    <div class="banner-ad bg-danger mb-3" style="background: url('/FoodMart-1.0.0/images/ad-image-3.png');background-repeat: no-repeat;background-position: right bottom;">
+                        <div class="banner-content p-5">
+
+                            <div class="categories text-primary fs-3 fw-bold"> 25% İndirim</div>
+                            <h3 class="banner-title">@item.DiscountTitle</h3>
+                            <p>@item.DiscountSubtitle</p>
+                            <a href="#" class="btn btn-dark text-uppercase">Sepete Ekle</a>
+
+                        </div>
+
+                    </div>
+                </div>
+            }
+
+            @foreach (var item in second)
+            {
+                <div class="col-md-6">
+                    @*    normalde burada resim url si girilecek ama tasarıma uygun resim bulunamadı *@
+                    <div class="banner-ad bg-info" style="background: url('/FoodMart-1.0.0/images/ad-image-4.png');background-repeat: no-repeat;background-position: right bottom;">
+                        <div class="banner-content p-5">
+
+                            <div class="categories text-primary fs-3 fw-bold"> 25% İndirim</div>
+                            <h3 class="banner-title">@item.DiscountTitle</h3>
+                            <p>@item.DiscountSubtitle</p>
+                            <a href="#" class="btn btn-dark text-uppercase">Sepete Ekle</a>
+
+                        </div>
+                     
+
+
+                    </div>
+                </div>
+            }
+                </div>
+                </div>
+            
+</section>

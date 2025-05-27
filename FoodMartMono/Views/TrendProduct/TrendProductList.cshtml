@@ -1,0 +1,32 @@
+﻿@model List<FoodMartMono.Dtos.TrendProductDto.ResultTrendProductDto>   
+@{
+    ViewData["Title"] = "TrendProductList";
+    Layout = "~/Views/_layoutmain.cshtml";
+}
+
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<h2>Tren Ürün Listesi</h2>
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+
+            <th>#</th>
+            <th>Tren Ürün Başlığı</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TrendProductId</td>
+                <td>@item.Title</td>
+                <td><a href="/TrendProduct/DeleteTrendProduct/@item.TrendProductId" class="btn btn-danger">Sil</a></td>
+                <td><a href="/TrendProduct/UpdateTrendProduct/@item.TrendProductId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/TrendProduct/CreateTrendProduct/" class="btn btn-primary">Yeni Trend Ürün Girişi</a>
+</div>

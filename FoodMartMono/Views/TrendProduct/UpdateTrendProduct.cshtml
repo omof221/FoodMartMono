@@ -1,0 +1,36 @@
+﻿@model FoodMartMono.Dtos.TrendProductDto.GetTrendProductByIdDto
+@{
+    ViewData["Title"] = "UpdateTrendProduct";
+    Layout = "~/Views/_layoutmain.cshtml";
+}
+
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<h2>Tren Ürün Güncelleme</h2>
+<div class="container">
+    <br />        <br />
+    <h3 class="alert alert-primary"> Trend Ürün Güncelleme</h3>
+    <form method="post">
+        <input type="hidden" asp-for="TrendProductId" />
+        <label>Trend Ürün  Adı </label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <br />
+        <button class="btn btn-info">Trend Ürünü Güncelle</button>
+
+
+
+
+
+
+
+    </form>
+
+
+
+
+
+
+
+
+</div>

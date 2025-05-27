@@ -1,0 +1,32 @@
+﻿@model List<FoodMartMono.Dtos.DiscountsDto.ResultDiscountDto>   
+@{
+    ViewData["Title"] = "DiscountList";
+    Layout = "~/Views/_layoutmain.cshtml";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<h2>İndirimli Ürün Listesi</h2>
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Ürün Adı</th>
+            <th>Ürün Alt Başlığı</th>
+            <th>Ürün Açıklama</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DiscountId</td>
+                <td>@item.DiscountTitle</td>
+                <td>@item.DiscountSubtitle</td>
+                <td>@item.DiscountDescription</td>
+                <td><a href="/Discount/DeleteDiscount/@item.DiscountId" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Discount/UpdateDiscount/@item.DiscountId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Discount/CreateDiscount/" class="btn btn-primary">Yeni İndirim Girişi</a>
+</div>
